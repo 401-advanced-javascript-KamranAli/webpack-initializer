@@ -10,4 +10,7 @@ const writeJson = (path, obj) => {
   console.log(path);
 };
 
-module.exports = write, writeJson;
+module.exports = {
+  write,
+  writeJson
+};
