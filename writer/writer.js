@@ -1,11 +1,13 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-const write = str => {
-  return fs.writeFile(str, 'utf8');
+const write = (path, str) => {
+  fs.writeFileSync(path, str);
 };
 
-const writeJson = path => {
-  return 
+const writeJson = (path, obj) => {
+  const json = JSON.stringify(obj);
+  fs.writeFileSync(path, json);
+  console.log(path);
 };
 
-module.exports = write;
+module.exports = write, writeJson;
