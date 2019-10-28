@@ -6,6 +6,4 @@ const webpackWriter = path => {
   write(path, newWebpack);
 };
 
-webpackWriter('./pack.txt');
-
 module.exports = webpackWriter;
