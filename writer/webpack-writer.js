@@ -1,9 +1,9 @@
 const fs = require('fs');
-const { writeJson } = require('./writer');
+const { write } = require('./writer');
 
 const webpackWriter = path => {
   const newWebpack = fs.readFileSync('template/webpack.config.js');
-  writeJson(path, newWebpack);
+  write(path, newWebpack);
 };
 
 webpackWriter('./pack.txt');
