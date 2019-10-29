@@ -1,12 +1,16 @@
-const { execSync } = require('child_process');
+module.exports = function installer(path, packages, dev) {
+  console.log('Installing...');
+  const { execSync } = require('child_process');
+  let d;
+  if(dev) {
+    d = '-D';
+  } else {
+    d = '';
+  }
 
-const installer = (path, arr, dev) => {
-  arr.forEach(element => {
-    execSync('npm i', {
-      cwd: path,
-      stdio: 'inherit'
-    }, element);
+  execSync(`npm i ${d} ${packages.json(' ')}`, {
+    cwd: path,
+    stdio: 'inherit'
   });
+  console.log('Dependencies Installed!');
 };
-
-module.exports = installer;
