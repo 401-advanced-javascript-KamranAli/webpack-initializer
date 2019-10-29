@@ -6,6 +6,4 @@ const babelWriter = path => {
   writeJson(path, newBabel);
 };
 
-babelWriter('./babel.txt');
-
 module.exports = babelWriter;

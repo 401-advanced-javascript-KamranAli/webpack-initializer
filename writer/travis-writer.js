@@ -6,6 +6,4 @@ const travisWriter = path => {
   write(path, newTravis);
 };
 
-travisWriter('./travis.txt');
-
 module.exports = travisWriter;
